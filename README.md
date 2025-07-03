@@ -21,6 +21,20 @@ Hệ thống giúp bạn cho cá ăn bằng 3 cách:
 
 ---
 
+## 🧩 Sơ Đồ Nối Dây
+
+| Thiết bị           | Chân thiết bị     | Kết nối tới ESP32    | Ghi chú                              |
+|--------------------|-------------------|------------------------|--------------------------------------|
+| **Servo SG90**     | VCC (đỏ)          | 5V hoặc nguồn ngoài    | Có thể dùng pin dự phòng 5V          |
+|                    | GND (đen)         | GND                    | Chung GND với ESP32                  |
+|                    | Signal (cam)      | **GPIO13 (D13)**       | Điều khiển servo                     |
+| **HC-SR04**        | VCC               | **5V**                 | Không dùng 3V3                       |
+|                    | GND               | GND                    |                                      |
+|                    | **Trig**          | **GPIO14 (D14)**       | Gửi xung phát                        |
+|                    | **Echo**          | **GPIO27 (D27)**       | Nhận xung về (nên dùng chuyển mức)  |
+
+> ⚠️ **Lưu ý:** Chân Echo xuất 5V → nên dùng resistor divider (10k–20k) hoặc module chuyển mức logic để tránh hỏng ESP32.
+> 
 ## 📱 CÀI ĐẶT APP BLYNK (Phiên bản 2.0 – Blynk IoT)
 
 ### Bước 1: Tạo tài khoản  
